@@ -47,6 +47,9 @@
 #define GPIO_PIN_PU 1
 #define GPIO_PIN_PO 2
 
+#define GPIO_PIN_SET 1
+#define GPIO_PIN_RESET 0
+
 typedef struct{
 	uint8_t GPIO_PinNumber;
 	uint8_t GPIO_PinMode;
