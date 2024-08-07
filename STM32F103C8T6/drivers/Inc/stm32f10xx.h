@@ -1,10 +1,18 @@
-#ifdef STM32F10xxx_H_
-#define STM32F10xxx_H_
+/*
+ * stm32f10xx.h
+ *
+ *  Created on: Aug 7, 2024
+ *      Author: TuNa
+ */
 
-// Step 1 : Configure the flash
-#define FLASH_BASEADDR  
-#define ROM_BASEADDR 
-#define SRAM_BASEADDR 0x20000000U 
+#ifndef INC_STM32F10XX_H_
+#define INC_STM32F10XX_H_
+
+#include <stdint.h>
+
+#define FLASH_BASEADDR
+#define ROM_BASEADDR
+#define SRAM_BASEADDR 0x20000000U
 
 // Step 2: Configure the Periogeral base
 #define PERIPH_BASEADDR 0x40000000U
@@ -42,7 +50,7 @@
 #define bxCAN2_BASEADDR (APB1PERIPH_BASEADDR + 0x6800) // bxCAN 2
 
 // Step 6: GPIO_RegDef struct
-typedef struct 
+typedef struct
 {
     /* data */
     volatile uint32_t CRL;
@@ -65,7 +73,7 @@ typedef struct
 #define GPIOG ((GPIO_RegDef_t *)GPIOG_BASEADDR)
 
 // Step 8: RCC_RegDef struct
-typedef struct 
+typedef struct
 {
     /* data */
     volatile uint32_t CR;
@@ -83,7 +91,7 @@ typedef struct
 
 #define RCC ((RCC_RegDef_t *)RCC_BASEADDR)
 
-typedef struct 
+typedef struct
 {
     /* data */
     volatile uint32_t IMR;
@@ -98,7 +106,7 @@ typedef struct
 #define EXTI ((EXTI_RegDef_t *)EXTI_BASEADDR)
 
 
-typedef struct 
+typedef struct
 {
     /* data */
     volatile uint32_t CR;
@@ -112,12 +120,12 @@ typedef struct
 }UART_RegDef_t;
 
 
-#define UART2 ((UART_RegDef_t *)UART2_BASEADDR) 
-#define UART3 ((UART_RegDef_t *)UART3_BASEADDR) 
+#define UART2 ((UART_RegDef_t *)UART2_BASEADDR)
+#define UART3 ((UART_RegDef_t *)UART3_BASEADDR)
 #define UART4 ((UART_RegDef_t *)UART4_BASEADDR)
-#define UART5 ((UART_RegDef_t *)UART5_BASEADDR) 
+#define UART5 ((UART_RegDef_t *)UART5_BASEADDR)
 
-typedef struct 
+typedef struct
 {
     /* data */
     volatile uint32_t CR1;
@@ -132,10 +140,10 @@ typedef struct
 
 }I2C_RegDef_t;
 
-#define I2C1 ((I2C_RegDef_t *)I2C1_BASEADDR) 
+#define I2C1 ((I2C_RegDef_t *)I2C1_BASEADDR)
 #define I2C2 ((I2C_RegDef_t *)I2C2_BASEADDR)
 
-typedef struct 
+typedef struct
 {
     /* data */
     volatile uint32_t CR1;
@@ -151,52 +159,48 @@ typedef struct
 
 }SPI_RegDef_t;
 
-#define SPI2 ((SPI_RegDef_t *)SPI2_BASEADDR) 
+#define SPI2 ((SPI_RegDef_t *)SPI2_BASEADDR)
 #define SPI3 ((I2C_RegDef_t *)SPI3_BASEADDR)
 
-typedef struct 
-{
-    /* data */
-    volatile uint32_t MCR;
-    volatile uint32_t MSR;
-    volatile uint32_t TSR;
-    volatile uint32_t RF0R;
-    volatile uint32_t RF1R;
-    volatile uint32_t IER;
-    volatile uint32_t ESR;
-    volatile uint32_t TI0R;
-    volatile uint32_t TDT0R;
-    volatile uint32_t TDL0R;//
-    volatile uint32_t TDH0R;
-    volatile uint32_t TI1R;
-    volatile uint32_t TDT1R;
-    volatile uint32_t TDL1R;
-    volatile uint32_t TDH1R;
-    volatile uint32_t TI2R;
-    volatile uint32_t TDT2R;
-    volatile uint32_t TDL2R;
-    volatile uint32_t TDH2R;
-    volatile uint32_t RI0R;
-    volatile uint32_t RDT0R;
-    volatile uint32_t RDL0R;
-    volatile uint32_t RDH0R;
-    volatile uint32_t RI1R;
-    volatile uint32_t RDT1R;
-    volatile uint32_t RDL1R;
-    volatile uint32_t RDH1R;
-    volatile uint32_t FMR;
-    volatile uint32_t FM1R;
-    volatile uint32_t FS1R;
-    volatile uint32_t FFA1R;
-    volatile uint32_t FA1R;
-    volatile uint32_t F0R1;
-    volatile uint32_t F0R2;
-    volatile uint32_t F1R1;
-    volatile uint32_t F1R2;
-    volatile uint32_t F27R1;
-    volatile uint32_t F27R2;
-
-}bxCAN_RegDef_t;
+// Clock Enable Macros for GPIO
+#define GPIOA_PCCK_EN() (RCC->APB2ENR |=(1<<2))
+#define GPIOB_PCCK_EN() (RCC->APB2ENR |=(1<<3))
+#define GPIOC_PCCK_EN() (RCC->APB2ENR |=(1<<4))
+#define GPIOD_PCCK_EN() (RCC->APB2ENR |=(1<<5))
+#define GPIOE_PCCK_EN() (RCC->APB2ENR |=(1<<6))
 
 
-#endif // STM32F10xxx_H_
+// Clock Enable Macros for UART SPI I2C
+#define UART2_PCCK_EN() (RCC->APB1ENR |=(1<<17))
+#define UART3_PCCK_EN() (RCC->APB1ENR |=(1<<18))
+#define UART4_PCCK_EN() (RCC->APB1ENR |=(1<<19))
+#define UART5_PCCK_EN() (RCC->APB1ENR |=(1<<20))
+#define I2C1_PCCK_EN() (RCC->APB1ENR |=(1<<21))
+#define I2C2_PCCK_EN() (RCC->APB1ENR |=(1<<22))
+#define SPI2_PCCK_EN() (RCC->APB1ENR |=(1<<14))
+#define SPI3_PCCK_EN() (RCC->APB1ENR |=(1<<15))
+
+// Clock Disable Macros for GPIO
+#define GPIOA_PCCK_DI() (RCC->APB2ENR &=~(1<<2))
+#define GPIOB_PCCK_DI() (RCC->APB2ENR &=~(1<<3))
+#define GPIOC_PCCK_DI() (RCC->APB2ENR &=~(1<<4))
+#define GPIOD_PCCK_DI() (RCC->APB2ENR &=~(1<<5))
+#define GPIOE_PCCK_DI() (RCC->APB2ENR &=~(1<<6))
+
+// Clock disable Macros for UART SPI I2C
+#define UART2_PCCK_DI() (RCC->APB1ENR &=~(1<<17))
+#define UART3_PCCK_DI() (RCC->APB1ENR &=~(1<<18))
+#define UART4_PCCK_DI() (RCC->APB1ENR &=~(1<<19))
+#define UART5_PCCK_DI() (RCC->APB1ENR &=~(1<<20))
+#define I2C1_PCCK_DI() (RCC->APB1ENR &=~(1<<21))
+#define I2C2_PCCK_DI() (RCC->APB1ENR &=~(1<<22))
+#define SPI2_PCCK_DI() (RCC->APB1ENR &=~(1<<14))
+#define SPI3_PCCK_DI() (RCC->APB1ENR &=~(1<<15))
+
+
+#define ENABLE 1
+#define DISABLE 0
+#define SET ENABLE
+#define RESET DISABLE
+
+#endif /* INC_STM32F10XX_H_ */

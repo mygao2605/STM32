@@ -17,7 +17,7 @@
  */
 
 #include <stdint.h>
-#include <stm32f103c8t6_tuna.h>
+#include <stm32f10xx.h>
 
 
 int main(void)
