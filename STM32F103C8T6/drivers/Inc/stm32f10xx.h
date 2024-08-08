@@ -12,13 +12,13 @@
 
 #define FLASH_BASEADDR
 #define ROM_BASEADDR
-#define SRAM_BASEADDR 0x20000000U
+#define SRAM_BASEADDR 			0x20000000U
 
 // Step 2: Configure the Periogeral base
-#define PERIPH_BASEADDR 0x40000000U
-#define APB1PERIPH_BASEADDR PERIPH_BASEADDR
-#define APB2PERIPH_BASEADDR 0x40010000U
-#define AHBPERIPH_BASEADDR 0x40018000U
+#define PERIPH_BASEADDR 		0x40000000U
+#define APB1PERIPH_BASEADDR 	PERIPH_BASEADDR
+#define APB2PERIPH_BASEADDR 	0x40010000U
+#define AHBPERIPH_BASEADDR 		0x40018000U
 
 // Step 3: Configure the GPIO base
 #define GPIOA_BASEADDR (APB2PERIPH_BASEADDR + 0x0800) // 0x4001 0800
@@ -198,9 +198,99 @@ typedef struct
 #define SPI3_PCCK_DI() (RCC->APB1ENR &=~(1<<15))
 
 
-#define ENABLE 1
-#define DISABLE 0
-#define SET ENABLE
-#define RESET DISABLE
+#define ENABLE 			1
+#define DISABLE 		0
+#define SET 			ENABLE
+#define RESET 			DISABLE
+#define GPIO_PIN_SET 	SET
+#define GPIO_PIN_RESET 	RESET
+
+
+// chua xong
+//#define IRQ_NO_EXTI0 6
+//#define IRQ_NO_EXTI1 7
+//#define IRQ_NO_EXTI2 8
+//#define IRQ_NO_EXTI3 9
+//#define IRQ_NO_EXTI4 10
+
+
+
+/*
+ * SPI Register
+ */
+
+//SPI_CR1
+
+#define SPI_CR1_CPHA 		0
+#define SPI_CR1_CPOL 		1
+#define SPI_CR1_MSTR 		2
+#define SPI_CR1_BR   		3
+#define SPI_CR1_SPE  		6
+#define SPI_CR1_LSBFIRST	7
+#define SPI_CR1_SSI 		8
+#define SPI_CR1_SSM 		9
+#define SPI_CR1_RXONLY 		10
+#define SPI_CR1_DFF 		11
+#define SPI_CR1_CRCNEXT 	12
+#define SPI_CR1_CRCEN 		13
+#define SPI_CR1_BIDIOE 		14
+#define SPI_CR1_BIDIMODE	15
+
+//SPI_CR2
+
+#define SPI_CR2_RXDMAEN 		0
+#define SPI_CR2_TXDMAEN 		1
+#define SPI_CR2_SSOE 		    2
+#define SPI_CR2_ERRIE   		5
+#define SPI_CR2_RXNEIE  		6
+#define SPI_CR2_TXEIE        	7
+
+//SPI_SR
+
+#define SPI_SR_RXNE 		0
+#define SPI_SR_TXE 		    1
+#define SPI_SR_CHSIDE 		2
+#define SPI_SR_UDR   		5
+#define SPI_SR_CRCERR  		6
+#define SPI_SR_MODF        	7
+#define SPI_SR_OVR 		    6
+#define SPI_SR_BSY       	7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #endif /* INC_STM32F10XX_H_ */

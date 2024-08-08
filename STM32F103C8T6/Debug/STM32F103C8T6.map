@@ -315,6 +315,110 @@ Discarded input sections
  .debug_frame   0x00000000      0x150 ./drivers/Src/stm32_gpio.o
  .ARM.attributes
                 0x00000000       0x2d ./drivers/Src/stm32_gpio.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_i2c.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_i2c.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_i2c.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_i2c.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_i2c.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_i2c.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_i2c.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_i2c.o
+ .text          0x00000000        0x0 ./drivers/Src/stm32_i2c.o
+ .data          0x00000000        0x0 ./drivers/Src/stm32_i2c.o
+ .bss           0x00000000        0x0 ./drivers/Src/stm32_i2c.o
+ .text.I2C_PeriClockControl
+                0x00000000       0x54 ./drivers/Src/stm32_i2c.o
+ .debug_info    0x00000000      0x1d4 ./drivers/Src/stm32_i2c.o
+ .debug_abbrev  0x00000000       0xb0 ./drivers/Src/stm32_i2c.o
+ .debug_aranges
+                0x00000000       0x20 ./drivers/Src/stm32_i2c.o
+ .debug_rnglists
+                0x00000000       0x13 ./drivers/Src/stm32_i2c.o
+ .debug_macro   0x00000000       0x7c ./drivers/Src/stm32_i2c.o
+ .debug_macro   0x00000000      0xaae ./drivers/Src/stm32_i2c.o
+ .debug_macro   0x00000000       0x22 ./drivers/Src/stm32_i2c.o
+ .debug_macro   0x00000000       0x8e ./drivers/Src/stm32_i2c.o
+ .debug_macro   0x00000000       0x51 ./drivers/Src/stm32_i2c.o
+ .debug_macro   0x00000000      0x103 ./drivers/Src/stm32_i2c.o
+ .debug_macro   0x00000000       0x6a ./drivers/Src/stm32_i2c.o
+ .debug_macro   0x00000000      0x1df ./drivers/Src/stm32_i2c.o
+ .debug_macro   0x00000000      0x1dc ./drivers/Src/stm32_i2c.o
+ .debug_line    0x00000000      0x46c ./drivers/Src/stm32_i2c.o
+ .debug_str     0x00000000     0x4882 ./drivers/Src/stm32_i2c.o
+ .comment       0x00000000       0x44 ./drivers/Src/stm32_i2c.o
+ .debug_frame   0x00000000       0x38 ./drivers/Src/stm32_i2c.o
+ .ARM.attributes
+                0x00000000       0x2d ./drivers/Src/stm32_i2c.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_spi.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_spi.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_spi.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_spi.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_spi.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_spi.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_spi.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_spi.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_spi.o
+ .text          0x00000000        0x0 ./drivers/Src/stm32_spi.o
+ .data          0x00000000        0x0 ./drivers/Src/stm32_spi.o
+ .bss           0x00000000        0x0 ./drivers/Src/stm32_spi.o
+ .text.SPI_PeriClockControl
+                0x00000000       0x54 ./drivers/Src/stm32_spi.o
+ .debug_info    0x00000000      0x250 ./drivers/Src/stm32_spi.o
+ .debug_abbrev  0x00000000       0xae ./drivers/Src/stm32_spi.o
+ .debug_aranges
+                0x00000000       0x20 ./drivers/Src/stm32_spi.o
+ .debug_rnglists
+                0x00000000       0x13 ./drivers/Src/stm32_spi.o
+ .debug_macro   0x00000000       0x81 ./drivers/Src/stm32_spi.o
+ .debug_macro   0x00000000      0xaae ./drivers/Src/stm32_spi.o
+ .debug_macro   0x00000000       0x22 ./drivers/Src/stm32_spi.o
+ .debug_macro   0x00000000       0x8e ./drivers/Src/stm32_spi.o
+ .debug_macro   0x00000000       0x51 ./drivers/Src/stm32_spi.o
+ .debug_macro   0x00000000      0x103 ./drivers/Src/stm32_spi.o
+ .debug_macro   0x00000000       0x6a ./drivers/Src/stm32_spi.o
+ .debug_macro   0x00000000      0x1df ./drivers/Src/stm32_spi.o
+ .debug_macro   0x00000000      0x1dc ./drivers/Src/stm32_spi.o
+ .debug_macro   0x00000000       0x82 ./drivers/Src/stm32_spi.o
+ .debug_line    0x00000000      0x46c ./drivers/Src/stm32_spi.o
+ .debug_str     0x00000000     0x4a5a ./drivers/Src/stm32_spi.o
+ .comment       0x00000000       0x44 ./drivers/Src/stm32_spi.o
+ .debug_frame   0x00000000       0x38 ./drivers/Src/stm32_spi.o
+ .ARM.attributes
+                0x00000000       0x2d ./drivers/Src/stm32_spi.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_uart.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_uart.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_uart.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_uart.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_uart.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_uart.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_uart.o
+ .group         0x00000000        0xc ./drivers/Src/stm32_uart.o
+ .text          0x00000000        0x0 ./drivers/Src/stm32_uart.o
+ .data          0x00000000        0x0 ./drivers/Src/stm32_uart.o
+ .bss           0x00000000        0x0 ./drivers/Src/stm32_uart.o
+ .text.UART_PeriClockControl
+                0x00000000       0x88 ./drivers/Src/stm32_uart.o
+ .debug_info    0x00000000      0x1bd ./drivers/Src/stm32_uart.o
+ .debug_abbrev  0x00000000       0xb0 ./drivers/Src/stm32_uart.o
+ .debug_aranges
+                0x00000000       0x20 ./drivers/Src/stm32_uart.o
+ .debug_rnglists
+                0x00000000       0x14 ./drivers/Src/stm32_uart.o
+ .debug_macro   0x00000000       0x7c ./drivers/Src/stm32_uart.o
+ .debug_macro   0x00000000      0xaae ./drivers/Src/stm32_uart.o
+ .debug_macro   0x00000000       0x22 ./drivers/Src/stm32_uart.o
+ .debug_macro   0x00000000       0x8e ./drivers/Src/stm32_uart.o
+ .debug_macro   0x00000000       0x51 ./drivers/Src/stm32_uart.o
+ .debug_macro   0x00000000      0x103 ./drivers/Src/stm32_uart.o
+ .debug_macro   0x00000000       0x6a ./drivers/Src/stm32_uart.o
+ .debug_macro   0x00000000      0x1df ./drivers/Src/stm32_uart.o
+ .debug_macro   0x00000000      0x1dc ./drivers/Src/stm32_uart.o
+ .debug_line    0x00000000      0x488 ./drivers/Src/stm32_uart.o
+ .debug_str     0x00000000     0x487c ./drivers/Src/stm32_uart.o
+ .comment       0x00000000       0x44 ./drivers/Src/stm32_uart.o
+ .debug_frame   0x00000000       0x38 ./drivers/Src/stm32_uart.o
+ .ARM.attributes
+                0x00000000       0x2d ./drivers/Src/stm32_uart.o
  .text          0x00000000        0x0 C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-exit.o)
  .data          0x00000000        0x0 C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-exit.o)
  .bss           0x00000000        0x0 C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-exit.o)
@@ -560,6 +664,9 @@ LOAD ./Src/syscalls.o
 LOAD ./Src/sysmem.o
 LOAD ./Startup/startup_stm32f103c8tx.o
 LOAD ./drivers/Src/stm32_gpio.o
+LOAD ./drivers/Src/stm32_i2c.o
+LOAD ./drivers/Src/stm32_spi.o
+LOAD ./drivers/Src/stm32_uart.o
 START GROUP
 LOAD C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a
 LOAD C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
