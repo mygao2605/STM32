@@ -35,22 +35,63 @@ void SPI_Init(SPI_Handle_t *pSPIHandle){
 		tempreg |=  (1<<SPI_CR1_RXONLY);
 	}
 
+	tempreg |=pSPIHandle->SPIConfig.SPI_SclkSpeed << SPI_CR1_BR;
+	tempreg |=pSPIHandle->SPIConfig.SPI_SclkSpeed << SPI_CR1_DFF;
+	tempreg |=pSPIHandle->SPIConfig.SPI_SclkSpeed << SPI_CR1_CPOL;
+	tempreg |=pSPIHandle->SPIConfig.SPI_SclkSpeed << SPI_CR1_CPHA;
+	tempreg |=pSPIHandle->SPIConfig.SPI_SclkSpeed << SPI_CR1_SSM;
 
-
+	pSPIHandle->pSPIx->CR1= tempreg;
 
 };
 void SPI_DeInit(SPI_RegDef_t *pSPIx){
 
 };
 
+uint8_t SPI_GetFlagStatus(SPI_RegDef_t *pSPIx, uint32_t FlagName){
+	if(pSPIx->SR&FlagName){
+		return FLAG_SET;
+	}
+	return FLAG_RESET;
+};
+
+
+
 /*
  * Polling Mode
  */
-void SPI_SendData(SPI_Handle_t *pSPIHandle,uint8_t *pTxBuffer, uint32_t size){
+void SPI_SendData(SPI_RegDef_t *pSPIx ,uint8_t *pTxBuffer, uint32_t len){
+	while(len>0){
+		while(SPI_GetFlagStatus(pSPIx,SPI_TXE_FLAG)== FLAG_RESET);
+		if(pSPIx->CR1 & (1<<SPI_CR1_DFF))
+		{
+			pSPIx->DR = *((uint16_t*)pTxBuffer);
+			len--;
+			len--;
+			(uint16_t*)pTxBuffer++;
+		}else{
+			pSPIx->DR = *pTxBuffer;
+			len--;
+			pTxBuffer++;
+		}
+	}
 
 };
-void SPI_ReceiveData(SPI_Handle_t *pSPIHandle,uint8_t *pRxBuffer, uint32_t size){
-
+void SPI_ReceiveData(SPI_RegDef_t *pSPIx,uint8_t *pRxBuffer, uint32_t len){
+	while(len>0){
+			while(SPI_GetFlagStatus(pSPIx,SPI_RXNE_FLAG)== FLAG_RESET);
+			if(pSPIx->CR1 & (1<<SPI_CR1_DFF))
+			{
+				*((uint16_t*)pRxBuffer)=pSPIx->DR;
+				len--;
+				len--;
+				(uint16_t*)pRxBuffer++;
+			}else{
+				*pRxBuffer=pSPIx->DR ;
+				len--;
+				pRxBuffer++;
+			}
+		}
 };
 
 /*

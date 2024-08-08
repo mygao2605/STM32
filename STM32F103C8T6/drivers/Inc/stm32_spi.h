@@ -57,6 +57,12 @@ typedef struct{
 #define SPI_SSM_DI					  0
 #define SPI_SSM_EN					  1
 
+
+#define SPI_TXE_FLAG 				(1<< SPI_SR_TXE)
+#define SPI_RXNE_FLAG 				(1<< SPI_SR_RXNE)
+#define SPI_BSY_FLAG 				(1<< SPI_SR_BSY)
+
+
 typedef struct{
 	SPI_RegDef_t *pSPIx;
 	SPI_Config_t SPIConfig;
@@ -70,8 +76,8 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx);
 /*
  * Polling Mode
  */
-void SPI_SendData(SPI_Handle_t *pSPIHandle,uint8_t *pTxBuffer, uint32_t size);
-void SPI_ReceiveData(SPI_Handle_t *pSPIHandle,uint8_t *pRxBuffer, uint32_t size);
+void SPI_SendData(SPI_RegDef_t *pSPIx,uint8_t *pTxBuffer, uint32_t size);
+void SPI_ReceiveData(SPI_RegDef_t *pSPIx,uint8_t *pRxBuffer, uint32_t size);
 
 /*
  * Interrupt Mode
